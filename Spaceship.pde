@@ -1,4 +1,12 @@
-class Spaceship //extends Floater  
+class Spaceship extends Floater  
 {   
-    //your code here
+  public Spaceship(int corner, int colors, double centerX, double centerY, double directionX, double directionY, double pointDirection){
+    corners = corner;
+    myColor = colors;
+    myCenterX = centerX;
+    myCenterY = centerY;
+    myDirectionX = directionX;
+    myDirectionY = directionY;
+    myPointDirection = pointDirection;
+  }
 }
