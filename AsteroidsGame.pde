@@ -11,19 +11,27 @@ public void draw()
   bob.move();
 
 }
+//input pressing direction + accelerating from apcs
+//stop accelerating
+
 public void keyPressed() {
   if(key == 'w'){
-    bob.setDirectionX(.6);
-    bob.setDirectionY(-.6);
-    System.out.println("presses W");
+    bob.accelerate(.4);
+    
+    System.out.println("pressed W");
   }
   if(key == 'a'){
-    bob.setPointDirection(5);
-    System.out.println("presses A");
+    bob.turn(-10);
+    System.out.println("pressed A");
   }
   if(key == 'd'){
-    bob.setPointDirection(-5);
-    System.out.println("presses D");
+    bob.turn(10);
+    System.out.println("pressed D");
+  }
+  if(key == 'e'){
+    bob.deaccelerate(.4);
+    bob.hyperspace();
+    System.out.println("pressed E");
   }
 
 
