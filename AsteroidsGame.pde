@@ -1,12 +1,20 @@
 Spaceship bob = new Spaceship();
+Star stars[] = new Star[100];
 public void setup() 
 {
   size(1000, 1000);
+  for(int i = 0; i < stars.length; i++){
+    stars[i] = new Star();
+  }
   
 }
 public void draw() 
 {
   background(0);
+
+  for(int i = 0; i < stars.length; i++){
+    stars[i].show();
+  }
   bob.show();
   bob.move();
 
@@ -16,8 +24,7 @@ public void draw()
 
 public void keyPressed() {
   if(key == 'w'){
-    bob.accelerate(.4);
-    
+    bob.accelerate(.5);
     System.out.println("pressed W");
   }
   if(key == 'a'){
@@ -28,8 +35,11 @@ public void keyPressed() {
     bob.turn(10);
     System.out.println("pressed D");
   }
+  if(key == 's'){
+    bob.accelerate(-.5);
+    System.out.println("pressed S");
+  }
   if(key == 'e'){
-    bob.deaccelerate(.4);
     bob.hyperspace();
     System.out.println("pressed E");
   }
