@@ -10,7 +10,7 @@ class Star //note that this class does NOT extend Floater
   void show(){
     fill(myColor);
     stroke(myColor);
-    ellipse((float)myX, (float)myY, 8, 8);
+    ellipse((float)myX, (float)myY, 5, 5);
   }
   
 }

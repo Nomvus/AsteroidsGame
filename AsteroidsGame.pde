@@ -1,5 +1,5 @@
 Spaceship bob = new Spaceship();
-Star stars[] = new Star[100];
+Star stars[] = new Star[1000];
 public void setup() 
 {
   size(1000, 1000);
@@ -20,7 +20,7 @@ public void draw()
 
 }
 //input pressing direction + accelerating from apcs
-//stop accelerating
+
 
 public void keyPressed() {
   if(key == 'w'){
@@ -42,6 +42,10 @@ public void keyPressed() {
   if(key == 'e'){
     bob.hyperspace();
     System.out.println("pressed E");
+  }
+  if (key == 'f'){
+    bob.deaccelerate(0);
+    System.out.println("pressed F");
   }
 
 
