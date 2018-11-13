@@ -23,12 +23,12 @@ public void draw()
   bob.show();
   bob.move();
   if(wIsPressed == true && dIsPressed == true){
-    bob.accelerate(.25);
-    bob.turn(5);
+    bob.accelerate(.1);
+    bob.turn(2);
   }
   if(wIsPressed == true && aIsPressed == true){
-    bob.accelerate(.25);
-    bob.turn(-5);
+    bob.accelerate(.1);
+    bob.turn(-2);
   }
 
 }
@@ -67,8 +67,14 @@ public void keyPressed() {
     bob.deaccelerate(0);
     System.out.println("pressed F");
   }
+  if (key == 'r'){
+    bob.deaccelerate(0);
+    bob.setX(500);
+    bob.setY(500);
+    bob.setPointDirection(0);
+    System.out.println("pressed R");
+  }
 }
-
   void keyReleased(){
     if (key == 'w'){
       wIsPressed = false;
