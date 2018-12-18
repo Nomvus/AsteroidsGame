@@ -1,27 +1,28 @@
 Spaceship bob = new Spaceship();
 Star stars[] = new Star[1000];
+ArrayList <Asteroid> belt = new ArrayList <Asteroid>();
 boolean wIsPressed = false;
 boolean aIsPressed = false;
 boolean dIsPressed = false;
-
 public void setup() 
 {
   size(1000, 1000);
   for(int i = 0; i < stars.length; i++){
     stars[i] = new Star();
   }
-
-  
+  for(int i = 0; i < 20; i++){
+    belt.add(i, new Asteroid());
+  }
 }
 public void draw() 
 {
   background(0);
-
   for(int i = 0; i < stars.length; i++){
     stars[i].show();
   }
   bob.show();
   bob.move();
+  bob.getX();
   if(wIsPressed == true && dIsPressed == true){
     bob.accelerate(.1);
     bob.turn(2);
@@ -30,14 +31,18 @@ public void draw()
     bob.accelerate(.1);
     bob.turn(-2);
   }
-
+  for(int i = 0; i < belt.size(); i++){
+  
+    belt.get(i).show();
+    belt.get(i).move();
+    Float d = dist(belt.get(i).getX(), belt.get(i).getY(), bob.getX(), bob.getY());
+    if(d < 45){
+      belt.remove(i);
+    }
+  }
 }
 
-
-
 //input elses maybe turning and accelerating is too sensitive when pressing both.
-
-
 
 public void keyPressed() {
   if(key == 'w'){
